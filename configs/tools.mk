@@ -24,14 +24,11 @@ PRODUCT_COPY_FILES +=  \
     $(LOCAL_PATH)/apk/Term.apk:system/app/Term.apk \
     $(LOCAL_PATH)/lib/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
 
-# Copy AOSP Latinime (thanks SlimRoms)
+# Copy Google Keyboard + latinime for gesture typing (AOSP Keyboard brings FC!)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/apk/LatinIME.apk:system/app/LatinIME.apk
-
-# Copy latinime for gesture typing
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/lib/libjni_latinime.so:system/lib/libjni_latinime.so
-
+    $(LOCAL_PATH)/lib/libjni_unbundled_latinimegoogle.so:system/lib/libjni_unbundled_latinimegoogle.so \
+    $(LOCAL_PATH)/apk/GoogleLatinIme.apk:system/app/GoogleLatinIme.apk
+    
 # Copy LowSoundFixer for KK (thanks tytung)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/apk/LowSoundFixer_v1.0.8.apk:system/app/LowSoundFixer_v1.0.8.apk
