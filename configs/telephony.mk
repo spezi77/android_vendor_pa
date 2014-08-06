@@ -10,6 +10,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/pa/prebuilt/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
 
+# Bring in Evervolv a2sd and init.d scripts
+include vendor/pa/configs/tools.mk
+
 # Telephony packages
 PRODUCT_PACKAGES += \
     Mms \
