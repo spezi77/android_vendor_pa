@@ -1,3 +1,4 @@
+add_lunch_combo pa_bravo-userdebug
 add_lunch_combo pa_a510-userdebug
 add_lunch_combo pa_a700-userdebug
 add_lunch_combo pa_amami-userdebug
