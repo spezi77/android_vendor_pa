@@ -13,8 +13,8 @@
 # limitations under the License.
 
 PRODUCT_PACKAGES += \
-    Busybox \
-    Lightbulb
+    Busybox
+#    Lightbulb
 
 # Source or prebuilt PA-prefs logic
 #ifneq ($(PREFS_FROM_SOURCE),true)
@@ -27,11 +27,17 @@ PRODUCT_PACKAGES += \
 #endif
 
 # Include ParanoidOTA
-ifneq ($(NO_OTA_BUILD),true)
-    PRODUCT_PACKAGES += \
-        ParanoidOTA
-endif
+#ifneq ($(NO_OTA_BUILD),true)
+#    PRODUCT_PACKAGES += \
+#        ParanoidOTA
+#endif
 
 # Extra properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.pa.device=$(DEVICE)
+
+# Include custom omni apps
+PRODUCT_PACKAGES += \
+    OmniSwitch \
+    OmniTorch
+    
