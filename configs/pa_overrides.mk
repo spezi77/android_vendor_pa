@@ -27,10 +27,13 @@
 #endif
 
 # Include ParanoidOTA
-ifneq ($(NO_OTA_BUILD),true)
-    PRODUCT_PACKAGES += \
-        ParanoidOTA
-endif
+#ifneq ($(NO_OTA_BUILD),true)
+#    PRODUCT_PACKAGES += \
+#        ParanoidOTA
+#endif
+
+# Bring in Evervolv a2sd and init.d scripts
+include vendor/omni/config/tools.mk
 
 # Extra properties
 PRODUCT_PROPERTY_OVERRIDES += \

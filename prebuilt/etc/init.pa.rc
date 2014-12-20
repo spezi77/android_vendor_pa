@@ -3,6 +3,8 @@
 import /init.superuser.rc
 
 on init
+    export SD_EXT_DIRECTORY /sd-ext
+    mkdir /sd-ext 0771 system system
     export ANDROID_CACHE /cache
     export TERMINFO /system/etc/terminfo
     export TERM linux
@@ -105,8 +107,19 @@ on boot
     write /sys/kernel/mm/ksm/pages_to_scan 100
     write /sys/kernel/mm/ksm/deferred_timer 1
 
+    # set permission to notify_on_migrate node (used by power hal)
     chown system system /dev/cpuctl/apps/cpu.notify_on_migrate
     chmod 0644 /dev/cpuctl/apps/cpu.notify_on_migrate
+
+    chown system system /sys/module/lowmemorykiller/parameters/minfree
+    chmod 0644 /sys/module/lowmemorykiller/parameters/minfree
+
+# sysinit (/system/etc/init.d)
+service sysinit /system/bin/sysinit
+    class late-start
+    user root
+    oneshot
+    disabled
 
 # adb over network
 on property:service.adb.tcp.port=5555
@@ -116,8 +129,10 @@ on property:service.adb.tcp.port=-1
     stop adbd
     start adbd
 
-# sysinit (/system/etc/init.d)
-service sysinit /system/bin/sysinit
+# Compcache - handle at boot
+service compcache /system/bin/handle_compcache
+    class main
     user root
+    group root
     oneshot
-    disabled
+
