@@ -33,7 +33,7 @@
 #endif
 
 # Bring in Evervolv a2sd and init.d scripts
-include vendor/pa/config/tools.mk
+include vendor/pa/configs/tools.mk
 
 # Extra properties
 PRODUCT_PROPERTY_OVERRIDES += \
