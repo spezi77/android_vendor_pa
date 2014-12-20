@@ -29,7 +29,7 @@ $(call inherit-product, vendor/pa/configs/telephony.mk)
 include vendor/pa/main.mk
 
 # Inherit device configuration
-$(call inherit-product, device/htc/bravo/bravo_eu.mk)
+$(call inherit-product, device/htc/bravo/full_bravo.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := pa_bravo
