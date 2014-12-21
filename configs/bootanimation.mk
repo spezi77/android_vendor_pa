@@ -24,19 +24,19 @@ ifneq ($(filter pa_bacon pa_d800 pa_d801 pa_d802 pa_d803 pa_d850 pa_d851 pa_d852
 endif
 
 # PA XHDPI Devices
-ifneq ($(filter pa_amami pa_aries pa_edison pa_maserasti pa_spyder pa_targa pa_umts_spyder pa_nozomi pa_falcon pa_evita pa_moto_msm8960 moto_msm8960_jbbl pa_d2lte pa_gee pa_geeb pa_hercules pa_i605 pa_i9300 pa_m4 pa_n7000 pa_n7100 pa_skyrocket pa_togari,$(TARGET_PRODUCT)),)
+ifneq ($(filter pa_bravo pa_amami pa_aries pa_edison pa_maserasti pa_spyder pa_targa pa_umts_spyder pa_nozomi pa_falcon pa_evita pa_moto_msm8960 moto_msm8960_jbbl pa_d2lte pa_gee pa_geeb pa_hercules pa_i605 pa_i9300 pa_m4 pa_n7000 pa_n7100 pa_skyrocket pa_togari,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
         vendor/pa/prebuilt/bootanimation/1280x720.zip:system/media/bootanimation.zip
 endif
 
-# PA HDPI Devices
-ifneq ($(filter pa_bravo pa_condor pa_galaxysmtd pa_i9100 pa_i9100g pa_p3100 pa_p3110 pa_taoshan pa_ville,$(TARGET_PRODUCT)),)
+# Hack: Use 1920x1080 of stock one till we get size for all of them.
+ifneq ($(filter pa_deb pa_flo pa_flounder,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/800x480.zip:system/media/bootanimation.zip
+        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
 endif
 
 # PA TVDPI Devices
 ifneq ($(filter pa_n5100 pa_n5110 pa_n5120,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/bootanimation/1920x1200.zip:system/media/bootanimation.zip
+        vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
 endif
