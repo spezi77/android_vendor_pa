@@ -14,10 +14,13 @@
 
 # Check for target product
 
-ifeq (pa_find7,$(TARGET_PRODUCT))
+ifeq (pa_vs985,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
 OVERLAY_TARGET := pa_xxhdpi
+
+# Build paprefs from sources
+PREFS_FROM_SOURCE ?= false
 
 # Inherit telephony common stuff
 $(call inherit-product, vendor/pa/configs/telephony.mk)
@@ -26,25 +29,15 @@ $(call inherit-product, vendor/pa/configs/telephony.mk)
 include vendor/pa/main.mk
 
 # Inherit device configuration
-$(call inherit-product, device/oppo/find7/full_find7.mk)
+$(call inherit-product, device/lge/vs985/vs985.mk)
 
-PRODUCT_GMS_CLIENTID_BASE := android-oppo
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := vs985
+PRODUCT_NAME := pa_vs985
+PRODUCT_BRAND := LGE
+PRODUCT_MODEL := LG-VS985
+PRODUCT_MANUFACTURER := lge
 
-# Override AOSP build properties
-PRODUCT_NAME := pa_find7
-PRODUCT_DEVICE := find7
-PRODUCT_BRAND := oppo
-PRODUCT_MANUFACTURER := OPPO
-PRODUCT_MODEL := X9006
-
-TARGET_VENDOR_PRODUCT_NAME := find7
-TARGET_VENDOR_DEVICE_NAME := X9006
-
-# Set build fingerprint / ID / Product Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=find7 TARGET_DEVICE=find7
-
-## Use the latest approved GMS identifiers unless running a signed build
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=4.4.2/KVT49L/1390465867:user/release-keys PRIVATE_BUILD_DESC="msm8974-user 4.4.2 KVT49L eng.root.20141017.144947 release-keys"
-
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_DEVICE="g3" PRODUCT_NAME="g3_vzw_us" BUILD_FINGERPRINT="lge/g3_vzw/g3:4.4.2/KVT49L.VS98512B/VS98512B.1414669625:user/release-keys" PRIVATE_BUILD_DESC="g3_vzw-user 4.4.2 KVT49L.VS98512B VS98512B.1414669625 release-keys"
 
 endif
