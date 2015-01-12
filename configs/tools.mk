@@ -1,4 +1,27 @@
 LOCAL_PATH:= vendor/pa/prebuilt
+PRODUCT_PACKAGES += \
+    bash \
+    busybox \
+    ca-bundle \
+    curl \
+    dumplogcat \
+    e2fsck \
+    mke2fs \
+    resize2fs \
+    rsync \
+    scp \
+    sftp \
+    ssh \
+    ssh-keygen \
+    sshd \
+    sshd_config \
+    sshd_motd \
+    start-ssh \
+    tune2fs \
+    vim \
+    vimrc \
+    wget \
+    wgetrc
 
 # Utilize init.d scripts
 PRODUCT_COPY_FILES += \
@@ -10,7 +33,6 @@ PRODUCT_COPY_FILES += \
 # Apps2sd files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bin/a2sd:system/bin/a2sd \
-    $(LOCAL_PATH)/bin/sysinit:system/bin/sysinit \
     $(LOCAL_PATH)/bin/fix_permissions:system/bin/fix_permissions \
     $(LOCAL_PATH)/xbin/zipalign:system/xbin/zipalign
 
