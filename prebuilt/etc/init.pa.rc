@@ -51,7 +51,6 @@ on boot
     chown system system /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor
 
-
     # ondemand governor
     chown system system /sys/devices/system/cpu/cpufreq/ondemand/boostfreq
     chmod 0660 /sys/devices/system/cpu/cpufreq/ondemand/boostfreq
@@ -139,6 +138,7 @@ service compcache /system/bin/handle_compcache
 
 # su daemon
 service su_daemon /system/xbin/su --daemon
+    seclabel u:r:sudaemon:s0
     class main
 
 on property:persist.sys.root_access=0
