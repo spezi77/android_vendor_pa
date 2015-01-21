@@ -112,6 +112,10 @@ on boot
 
     chown system system /sys/module/lowmemorykiller/parameters/minfree
     chmod 0644 /sys/module/lowmemorykiller/parameters/minfree
+    
+    # su permit execution
+    chmod 0740 /system/xbin/su
+    chmod 0740 /system/bin/su
 
 # sysinit (/system/etc/init.d)
 service sysinit /system/bin/sysinit
