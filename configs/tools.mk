@@ -22,6 +22,10 @@ PRODUCT_PACKAGES += \
     vimrc \
     wget \
     wgetrc
+    
+# Toolbox
+PRODUCT_PACKAGES += \
+    Toolbox
 
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
