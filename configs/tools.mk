@@ -22,7 +22,11 @@ PRODUCT_PACKAGES += \
     vimrc \
     wget \
     wgetrc
-    
+
+# Hot reboot
+PRODUCT_PACKAGE_OVERLAYS += \
+    vendor/pa/overlay/hot_reboot
+
 # Toolbox
 PRODUCT_PACKAGES += \
     Toolbox
