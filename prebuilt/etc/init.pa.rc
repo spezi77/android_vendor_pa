@@ -1,6 +1,4 @@
 # ParanoidAndroid Extras
-# Superuser
-import /init.superuser.rc
 
 on init
     export SD_EXT_DIRECTORY /sd-ext
@@ -17,6 +15,29 @@ on post-fs-data
 
     # Run sysinit
     start sysinit
+
+# su daemon
+service su_daemon /system/xbin/su --daemon
+    seclabel u:r:sudaemon:s0
+    class main
+
+on property:persist.sys.root_access=0
+    stop su_daemon
+
+on property:persist.sys.root_access=2
+    stop su_daemon
+
+on property:persist.sys.root_access=1
+    start su_daemon
+
+on property:persist.sys.root_access=3
+    start su_daemon
+
+on property:init.svc.su_daemon=running
+    mkdir /dev/com.spezi77.toolbox.daemon 0755 root root
+    restorecon_recursive /dev/com.spezi77.toolbox.daemon
+    mkdir /dev/com.spezi77.toolbox 0755 root root
+    restorecon_recursive /dev/com.spezi77.toolbox
 
 on boot
     # interactive governor
@@ -112,10 +133,6 @@ on boot
 
     chown system system /sys/module/lowmemorykiller/parameters/minfree
     chmod 0644 /sys/module/lowmemorykiller/parameters/minfree
-    
-    # su permit execution
-    chmod 0740 /system/xbin/su
-    chmod 0740 /system/bin/su
 
 # sysinit (/system/etc/init.d)
 service sysinit /system/bin/sysinit
