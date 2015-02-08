@@ -36,7 +36,6 @@ PRODUCT_COPY_FILES += \
 
 # SU Support
     SUPERUSER_EMBEDDED := true
-    SUPERUSER_PACKAGE_PREFIX := com.koushikdutta.superuser
 
 # Include Superuser binaries
 PRODUCT_PACKAGES := \
