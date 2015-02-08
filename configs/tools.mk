@@ -1,7 +1,6 @@
 LOCAL_PATH:= vendor/pa/prebuilt
 PRODUCT_PACKAGES += \
     bash \
-    busybox \
     ca-bundle \
     curl \
     dumplogcat \
@@ -30,11 +29,6 @@ PRODUCT_PACKAGE_OVERLAYS += \
 # Toolbox
 PRODUCT_PACKAGES += \
     Toolbox
-
-# Compcache/Zram support
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bin/compcache:system/bin/compcache \
-    $(LOCAL_PATH)/bin/handle_compcache:system/bin/handle_compcache
 
 # Copy prebuilt apps
 PRODUCT_COPY_FILES +=  \
