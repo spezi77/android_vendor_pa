@@ -15,12 +15,6 @@
 PRODUCT_PACKAGES += \
     busybox
 
-# Include ParanoidOTA
-#ifneq ($(NO_OTA_BUILD),true)
-#    PRODUCT_PACKAGES += \
-#        ParanoidOTA
-#endif
-
 # Bring in Evervolv a2sd and init.d scripts
 include vendor/pa/configs/tools.mk
 
