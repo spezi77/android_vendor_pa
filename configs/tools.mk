@@ -29,7 +29,3 @@ PRODUCT_PACKAGE_OVERLAYS += \
 # Toolbox
 PRODUCT_PACKAGES += \
     Toolbox
-
-# Copy prebuilt apps
-PRODUCT_COPY_FILES +=  \
-    $(LOCAL_PATH)/apk/LowSoundFixer_v1.0.8.apk:system/priv-app/LowSoundFixer/LowSoundFixer_v1.0.8.apk
