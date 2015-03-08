@@ -17,7 +17,3 @@ PRODUCT_PACKAGES += \
 
 # Bring in Evervolv a2sd and init.d scripts
 include vendor/pa/configs/tools.mk
-
-# Extra properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.pa.device=$(DEVICE)
