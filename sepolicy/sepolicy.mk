@@ -7,6 +7,7 @@ BOARD_SEPOLICY_DIRS += \
     vendor/pa/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+    akmd.te \
     app.te \
     bootanim.te \
     drmserver.te \
