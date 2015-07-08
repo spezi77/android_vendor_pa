@@ -165,6 +165,9 @@ endif
 ifeq (pa_tomato,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_tomato.mk
 endif
+ifeq (pa_victara,$(TARGET_PRODUCT))
+    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_victara.mk
+endif
 ifeq (pa_vs980,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_vs980.mk
 endif
