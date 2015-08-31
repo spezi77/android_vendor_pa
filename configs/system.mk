@@ -45,5 +45,5 @@ PRODUCT_COPY_FILES += \
 #    Superuser \
 #    su
 
-# PRODUCT_PROPERTY_OVERRIDES += \
-#    persist.sys.root_access=3
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=3

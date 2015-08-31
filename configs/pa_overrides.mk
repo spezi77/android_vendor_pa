@@ -15,8 +15,5 @@
 PRODUCT_PACKAGES += \
     busybox
 
-# Include ParanoidOTA
-ifneq ($(NO_OTA_BUILD),true)
-    PRODUCT_PACKAGES += \
-        ParanoidOTA
-endif
+# Bring in Toolbox and Hot reboot overlay
+include vendor/pa/configs/tools.mk
