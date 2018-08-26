@@ -13,7 +13,10 @@ $(call add_json_str,  QTIDisplayPath,                        $(call project-path
 $(call add_json_str,  QTIMediaPath,                          $(call project-path-for,qcom-media))
 $(call add_json_str,  Target_shim_libs,                      $(TARGET_LD_SHIM_LIBS))
 
+$(call add_json_str_omitempty,	Additional_gralloc_10_usage_bits,	$(TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS))
+
 # This causes the build system to strip out the last comma in our nested struct, to keep the JSON valid.
 _contents := $(_contents)__SV_END
 
 _contents := $(_contents)    },$(newline)
+
