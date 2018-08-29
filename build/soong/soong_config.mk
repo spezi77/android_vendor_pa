@@ -1,5 +1,7 @@
 _contents := $(_contents)    "Aospa":{$(newline)
 
+add_json_str_omitempty = $(if $(strip $(2)),$(call add_json_str, $(1), $(2)))
+
 # See build/core/soong_config.mk for the add_json_* functions you can use here.
 $(call add_json_bool, BoardUsesQTIHardware,                  $(filter true,$(if $(BOARD_USES_QTI_HARDWARE),true,false)))
 $(call add_json_bool, Cant_reallocate_omx_buffers,           $(filter true,$(if $(filter omap4,$(TARGET_BOARD_PLATFORM)),true,false)))
