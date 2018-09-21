@@ -12,6 +12,7 @@ $(call add_json_str,  QTIAudioPath,                          $(call project-path
 $(call add_json_str,  QTIDisplayPath,                        $(call project-path-for,qcom-display))
 $(call add_json_str,  QTIMediaPath,                          $(call project-path-for,qcom-media))
 $(call add_json_str,  Target_shim_libs,                      $(TARGET_LD_SHIM_LIBS))
+$(call add_json_bool, Target_uses_color_metadata,            $(filter true,$(TARGET_USES_COLOR_METADATA)))
 
 $(call add_json_str_omitempty,	Additional_gralloc_10_usage_bits,	$(TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS))
 

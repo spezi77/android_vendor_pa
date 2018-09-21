@@ -19,6 +19,10 @@ type Product_variables struct {
 	Additional_gralloc_10_usage_bits struct {
 		Cppflags []string
 	}
+
+	Target_uses_color_metadata struct {
+		Cppflags []string
+	}
 }
 
 type ProductVariables struct {
@@ -30,4 +34,5 @@ type ProductVariables struct {
 	Qti_flac_decoder                      *bool `json:",omitempty"`
 	Target_shim_libs                      *string `json:",omitempty"`
 	Additional_gralloc_10_usage_bits      *string `json:",omitempty"`
+	Target_uses_color_metadata            *bool `json:",omitempty"`
 }
