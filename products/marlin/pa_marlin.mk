@@ -45,4 +45,7 @@ BUILD_THUMBPRINT="9/PQ1A.190105.004/5148680:user/release-keys"
 # Paranoid Android platform
 include vendor/pa/main.mk
 
+# Google Apps
+$(call inherit-product, vendor/googleapps/googleapps.mk)
+
 endif
