@@ -222,8 +222,9 @@ function repolastsync() {
 
 function repopick()
 {
-    T=$(gettop)
-    $T/vendor/pa/build/tools/repopick.py $@
+    #T=$(gettop)
+    #$T/vendor/pa/build/tools/repopick.py $@
+    echo "repopick disabled"
 }
 
 # Android specific JACK args
